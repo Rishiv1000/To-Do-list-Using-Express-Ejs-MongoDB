@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO DO LIST</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="box" id = "heading">
+        <h1 text-align ="centre"><%= live %></h1>
+    </div>
+    
+
+    <div class="box">
+        <%  myitems.forEach(function(element){ %>
+            <form action="/delete"  method="post">
+                <div class="item">  
+                <input type="checkbox" name="check" value="<%= element._id %>" onchange="this.form.submit()">
+                 <p style="color: rgb(0, 0, 0);"> <%= element.mywork %></p>
+                </div>
+            </form>
+        <% }) %>
+      
+        
+         
+            <form action="/" method="post" class="item"> 
+
+                <input  style="color: rgb(0, 0, 0)" type="text" placeholder="Enter Your Text " name="write" autocomplete="off">
+                <button>+</button>
+        
+        
+            </form>
+    </div>
+
+
+</body>
+</html>
